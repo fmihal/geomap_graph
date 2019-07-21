@@ -9,7 +9,7 @@ module.exports = gql `
     }
 
     type Pin {
-        _if: ID,
+        _id: ID,
         createdAt: String,
         title: String,
         content: String,
