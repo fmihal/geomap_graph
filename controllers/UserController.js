@@ -11,7 +11,7 @@ exports.findOrCreateUser = async token => {
     const user = await checkUserExists(googleUser.email)
 
     //otherwise create user
-    return user ? user : craeteNewUser(googleUser)
+    return user ? user : createNewUser(googleUser)
 }
 
 const verifyAuthToken = async token => {
@@ -28,8 +28,8 @@ const verifyAuthToken = async token => {
 
 const checkUserExists = async email => await User.findOne({email}).exec();
 
-const craeteNewUser = googleUser => {
+const createNewUser = googleUser => {
     const {name, email, picture} = googleUser;
-    const user = { name, email, picture}
+    const user = {name, email, picture}
     return new User(user).save()
 }
