@@ -13,11 +13,12 @@ const viewport = {
 
 const Map = ({ classes }) => {
 
-  return( 
+
+  return ( 
     <div className={classes.root}>
       <ReactMapGL
         width="100vw"
-        heght="(calc100vh-64px)"
+        heght="calc(100vh-64px)"
         mapStyle="mapbox://styles/mapbox/streets-v9"
         mapboxApiAccessToken="pk.eyJ1IjoibWloYWxpYzE5ODkiLCJhIjoiY2p5ZGFsZ2FqMHFpZjNjcDh3MG5mM3VvNSJ9.adKavd7f5Hm9PW5q9jvNZQ"
         {...viewport}
