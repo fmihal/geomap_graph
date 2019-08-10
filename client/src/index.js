@@ -7,8 +7,6 @@ import Splash from "./pages/Splash";
 import ProtectedRoute from './ProtectedRoute'
 import Context from './context';
 import reducer from './reducer'
-
-import "mapbox-gl/dist/mapbox-gl.css";
 import * as serviceWorker from "./serviceWorker";
 
 const Root = () => {
