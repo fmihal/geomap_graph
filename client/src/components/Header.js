@@ -3,11 +3,13 @@ import Typography from "@material-ui/core/Typography";
 import Context from '../context'
 import Signout from '../components/Auth/Signout';
 import { withStyles } from "@material-ui/core/styles";
+import {unstable_useMediaQuery  as useMediaQuery} from '@material-ui/core/useMediaQuery';
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import MapIcon from "@material-ui/icons/Map";;
+import MapIcon from "@material-ui/icons/Map";
 
 const Header = ({ classes }) => {
+  const mobileSize = useMediaQuery('max-width: 650px')
   const { state } = useContext(Context);
   const {currentUser} = state;
 
@@ -20,6 +22,7 @@ const Header = ({ classes }) => {
               
               </MapIcon>
               <Typography
+              className={mobileSize ? classes.mobile : ''}
                   component="h1"
                   variant="h6"
                   color="inherit"
@@ -36,6 +39,7 @@ const Header = ({ classes }) => {
                   alt={currentUser.name}
                 />
                 <Typography
+                 className={mobileSize ? classes.mobile : ''}
                   variant="h5"
                   color="inherit"
                   noWrap
